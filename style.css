@@ -1,0 +1,12 @@
+body {
+	text-align: center;
+	background-color: aquamarine;
+	font-family: "Times New Roman", Times, serif;
+	font-style: oblique;
+	text-transform: none;
+	text-indent: 5%;
+}
+
+#display {
+	background-image: url("./FlappyBird_bg2.png");
+}

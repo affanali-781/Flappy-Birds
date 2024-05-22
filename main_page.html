@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Flappy Bird</title>
+		<link rel="stylesheet" href="style_main.css" />
+	</head>
+	<body>
+		<div id="full-page-image"></div>
+		<a class="play-btn" href="#" onclick="showModal()"></a>
+
+		<!-- Modal -->
+		<div id="overlay"></div>
+		<div id="modal">
+			<h2>Enter your name:</h2>
+			<input type="text" id="nameInput" />
+			<br /><br />
+			<button onclick="playGame()">Enter</button>
+			<button onclick="hideModal()">Return</button>
+		</div>
+
+		<script>
+			function showModal() {
+				document.getElementById("overlay").style.display = "block";
+				document.getElementById("modal").style.display = "block";
+			}
+
+			function hideModal() {
+				document.getElementById("overlay").style.display = "none";
+				document.getElementById("modal").style.display = "none";
+			}
+
+			function playGame() {
+				var playerName = document.getElementById("nameInput").value;
+				if (playerName !== "") {
+					// Save the player name to local storage for later use
+					localStorage.setItem("playerName", playerName);
+					// Redirect to game.html
+					window.location.href = "./game.html";
+				} else {
+					alert("Please enter your name.");
+				}
+			}
+		</script>
+	</body>
+</html>
